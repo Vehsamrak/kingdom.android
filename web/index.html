@@ -23,7 +23,11 @@
             var logo = game.add.sprite(160, 230, 'logo');
 
             game.time.events.add(3000, function () {
-                logo.destroy();
+                game.camera.fade(null, 2000);
+                game.camera.onFadeComplete.add(function () {
+                    logo.destroy();
+                    game.camera.resetFX();
+                }, this);
             });
         }
     };
