@@ -1,0 +1,15 @@
+{
+    "name": "kingdom-game",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "phaser": "^2.6.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Vehsamrak",
+    "license": "ISC"
+}
