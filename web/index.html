@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Kingdom game</title>
+    <script src="js/phaser.min.js"></script>
+</head>
+<body style="background-color: black">
+
+<center>
+    <div id="game"></div>
+</center>
+
+<script type="text/javascript">
+    window.onload = function () {
+        var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game', {preload: preload, create: create});
+
+        function preload() {
+            game.load.image('logo', 'img/kingdom-logo.png');
+        }
+
+        function create() {
+            var logo = game.add.sprite(160, 230, 'logo');
+
+            game.time.events.add(3000, function () {
+                logo.destroy();
+            });
+        }
+    };
+</script>
+
+</body>
+</html>
