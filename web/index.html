@@ -47,21 +47,29 @@
 
                 var speed = 200;
                 if (cursors.up.isDown) {
-                    player.body.moveUp(speed)
-                    player.angle = 140;
+                    if (player.angle <= -130) {
+                        player.angle = 179;
+                    }
+
+                    player.body.moveUp(speed);
+                    game.add.tween(player).to({angle: 140}, 100, Phaser.Easing.Linear.None, true);
                 }
                 else if (cursors.down.isDown) {
                     player.body.moveDown(speed);
-                    player.angle = -40;
+                    game.add.tween(player).to({angle: -40}, 100, Phaser.Easing.Linear.None, true);
                 }
 
                 if (cursors.left.isDown) {
+                    game.add.tween(player).to({angle: 30}, 100, Phaser.Easing.Linear.None, true);
                     player.body.moveLeft(speed);
-                    player.angle = 50;
                 }
                 else if (cursors.right.isDown) {
+                    if (player.angle <= 140) {
+                        player.angle = -179;
+                    }
+
                     player.body.moveRight(speed);
-                    player.angle = 230;
+                    game.add.tween(player).to({angle: -130}, 100, Phaser.Easing.Linear.None, true);
                 }
             });
         }
