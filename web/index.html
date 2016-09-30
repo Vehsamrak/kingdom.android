@@ -42,22 +42,26 @@
         }
 
         function update() {
-            game.time.events.add(5000, function () {
+            game.time.events.add(6000, function () {
                 player.body.setZeroVelocity();
 
                 var speed = 200;
                 if (cursors.up.isDown) {
                     player.body.moveUp(speed)
+                    player.angle = 140;
                 }
                 else if (cursors.down.isDown) {
                     player.body.moveDown(speed);
+                    player.angle = -40;
                 }
 
                 if (cursors.left.isDown) {
                     player.body.moveLeft(speed);
+                    player.angle = 50;
                 }
                 else if (cursors.right.isDown) {
                     player.body.moveRight(speed);
+                    player.angle = 230;
                 }
             });
         }
